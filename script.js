@@ -237,7 +237,7 @@ const colors = [
     '#3877FF',
 ];
 
-const arena = createMatrix(12, 20);
+const arena = createMatrix(10, 20);
 
 const player = {
     pos: {x: 0, y: 0},
