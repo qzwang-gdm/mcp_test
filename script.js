@@ -18,6 +18,7 @@ function arenaSweep() {
 
         player.score += rowCount * 10;
         rowCount *= 2;
+        updateScore();
     }
 }
 
@@ -148,7 +149,6 @@ function playerDrop() {
         merge(arena, player);
         playerReset();
         arenaSweep();
-        updateScore();
     }
     dropCounter = 0;
 }
@@ -211,15 +211,15 @@ function updateScore() {
 }
 
 document.addEventListener('keydown', event => {
-    if (event.keyCode === 37) {
+    if (event.key === 'ArrowLeft') {
         playerMove(-1);
-    } else if (event.keyCode === 39) {
+    } else if (event.key === 'ArrowRight') {
         playerMove(1);
-    } else if (event.keyCode === 40) {
+    } else if (event.key === 'ArrowDown') {
         playerDrop();
-    } else if (event.keyCode === 81) {
+    } else if (event.key === 'q' || event.key === 'Q') {
         playerRotate(-1);
-    } else if (event.keyCode === 87) {
+    } else if (event.key === 'w' || event.key === 'W') {
         playerRotate(1);
     }
 });
